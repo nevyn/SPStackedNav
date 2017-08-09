@@ -71,13 +71,12 @@ typedef enum
 
 static const CGFloat kSPStackedNavigationHalfPageWidth = 472;
 
-enum {
+typedef NS_ENUM(NSInteger, SPStackedNavigationPageSize) {
     /// Fills the width of the screen in landscape (excluding sidebar)
-    kStackedPageHalfSize = 1,
+    SPStackedNavigationPageSizeHalf = 1,
     /// Uses the full available width
-    kStackedPageFullSize = 2
+    SPStackedNavigationPageSizeFull = 2
 };
-typedef int SPStackedNavigationPageSize;
 
 /// Informal protocol used to optionally customize the behavior of child VCs
 /// to a SPStackedNavigationController.

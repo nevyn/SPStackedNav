@@ -71,7 +71,7 @@ static const float kUnknownFrameSize = 10;
 {
     CGSize size = self.view.frame.size;
     CGRect frame = CGRectMake(self.view.bounds.size.width, 0, 0, size.height);
-    frame.size.width = (viewController.stackedNavigationPageSize == kStackedPageHalfSize ?
+    frame.size.width = (viewController.stackedNavigationPageSize == SPStackedNavigationPageSizeHalf ?
                         kSPStackedNavigationHalfPageWidth :
                         size.width);
     
@@ -220,7 +220,7 @@ static const float kUnknownFrameSize = 10;
         return @[];
     }
 
-    if ([self.activeViewController stackedNavigationPageSize] == kStackedPageFullSize) {
+    if ([self.activeViewController stackedNavigationPageSize] == SPStackedNavigationPageSizeFull) {
         return @[self.activeViewController];
     }
 
@@ -242,7 +242,7 @@ static const float kUnknownFrameSize = 10;
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
 {
     int targetCount = 1;
-    if (self.viewControllers.count > 0 && [(self.viewControllers)[0] stackedNavigationPageSize] == kStackedPageHalfSize)
+    if (self.viewControllers.count > 0 && [(self.viewControllers)[0] stackedNavigationPageSize] == SPStackedNavigationPageSizeHalf)
         targetCount = 2;
     
     NSMutableArray *vcs = [NSMutableArray array];
@@ -326,7 +326,7 @@ static const float kUnknownFrameSize = 10;
 @implementation NSObject (SPStackedNavigationChild)
 - (SPStackedNavigationPageSize)stackedNavigationPageSize
 {
-    return kStackedPageFullSize;
+    return SPStackedNavigationPageSizeFull;
 }
 @end
 

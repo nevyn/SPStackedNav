@@ -84,12 +84,12 @@ static const CGFloat kPanScrollViewDeceleratingCaptureAngle = ((40.f) / 180.f * 
     {
         if (pc == pageC)
             break;
-        if (pc.vc.stackedNavigationPageSize == kStackedPageFullSize)
+        if (pc.vc.stackedNavigationPageSize == SPStackedNavigationPageSizeFull)
             width += self.frame.size.width;
         else
             width += pc.frame.size.width;
     }
-    return NSMakeRange(width, (pageC.vc.stackedNavigationPageSize  == kStackedPageFullSize ?
+    return NSMakeRange(width, (pageC.vc.stackedNavigationPageSize  == SPStackedNavigationPageSizeFull ?
                                self.frame.size.width : 
                                pageC.frame.size.width));
 }
@@ -328,7 +328,7 @@ static const CGFloat kPanScrollViewDeceleratingCaptureAngle = ((40.f) / 180.f * 
     for(SPStackedPageContainer *pageC in self.subviews) {
         pen.size = pageC.bounds.size;
         pen.size.height = self.frame.size.height;
-        if (pageC.vc.stackedNavigationPageSize == kStackedPageFullSize)
+        if (pageC.vc.stackedNavigationPageSize == SPStackedNavigationPageSizeFull)
             pen.size.width = self.frame.size.width;
         
         CGRect actualPen = pen;
