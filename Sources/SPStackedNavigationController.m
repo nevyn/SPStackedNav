@@ -41,7 +41,6 @@
     return self;
 }
 
-static const float kUnknownFrameSize = 10;
 - (void)loadView
 {
     CGRect frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
@@ -152,8 +151,9 @@ static const float kUnknownFrameSize = 10;
 #pragma mark Convenience methods to the above two methods.
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated
 {
-    id commonVC = nil; int startI = NSNotFound;
-    for(int i = 0, c = MIN([self.viewControllers count], [viewControllers count]); i < c; i++)
+    id commonVC = nil;
+    NSInteger startI = NSNotFound;
+    for(NSInteger i = 0, c = MIN([self.viewControllers count], [viewControllers count]); i < c; i++)
     {
         if ([viewControllers[i] isEqual:(self.viewControllers)[i]])
         {

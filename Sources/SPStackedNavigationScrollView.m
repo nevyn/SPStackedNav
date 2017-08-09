@@ -42,7 +42,7 @@ static const CGFloat kPanScrollViewDeceleratingCaptureAngle = ((40.f) / 180.f * 
 @interface SPStackedNavigationScrollView () <UIGestureRecognizerDelegate>
 @property(nonatomic,retain) UIPanGestureRecognizer *scrollRec;
 @property(nonatomic,retain) CADisplayLink *scrollAnimationTimer;
-@property(nonatomic,copy) void(^onScrollDone)();
+@property(nonatomic,copy) void(^onScrollDone)(void);
 - (void)scrollGesture:(UIPanGestureRecognizer*)grec;
 - (void)updateContainerVisibilityByShowing:(BOOL)doShow byHiding:(BOOL)doHide;
 @end
@@ -241,7 +241,7 @@ static const CGFloat kPanScrollViewDeceleratingCaptureAngle = ((40.f) / 180.f * 
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer
 {
     CGPoint velocity = [gestureRecognizer velocityInView:[gestureRecognizer view]];
-    CGFloat angle = velocity.x == 0.0 ?: atanf(fabsf(velocity.y / velocity.x));
+    CGFloat angle = velocity.x == 0.0 ?: atanf(fabs((double)velocity.y / velocity.x));
 
     CGFloat captureAngle = kPanCaptureAngle;
     if ([[gestureRecognizer view] isKindOfClass:[UIScrollView class]] && [(UIScrollView*)[gestureRecognizer view] isDecelerating])
@@ -274,10 +274,10 @@ static const CGFloat kPanScrollViewDeceleratingCaptureAngle = ((40.f) / 180.f * 
     }
     NSTimeInterval delta = cdl.duration;
     CGFloat diff = _targetOffset.x - _actualOffset.x;
-    CGFloat movementPerSecond = CLAMP(abs(diff)*14, 20, 4000)*fsign(diff);
+    CGFloat movementPerSecond = CLAMP(fabs((double)diff)*14, 20, 4000)*fsign(diff);
     CGFloat movement = movementPerSecond * delta;
     
-    if (abs(movement) > abs(diff)) movement = diff; // so we never step over the target point
+    if (fabs((double)movement) > fabs((double)diff)) movement = diff; // so we never step over the target point
     
     _actualOffset.x += movement;
     [self setNeedsLayout];
@@ -347,7 +347,7 @@ static const CGFloat kPanScrollViewDeceleratingCaptureAngle = ((40.f) / 180.f * 
             pen.origin.x += pen.size.width;
         
         if (actualPen.origin.x <= 0 && pageC != [self.subviews lastObject]) {
-            pageC.overlayOpacity = 0.3/actualPen.size.width*abs(actualPen.origin.x);
+            pageC.overlayOpacity = 0.3/actualPen.size.width*fabs((double)actualPen.origin.x);
         } else {
             pageC.overlayOpacity = 0.0;
         }
@@ -379,7 +379,7 @@ static const CGFloat kPanScrollViewDeceleratingCaptureAngle = ((40.f) / 180.f * 
 #pragma mark Visibility
 - (void)updateContainerVisibilityByShowing:(BOOL)doShow byHiding:(BOOL)doHide
 {
-    BOOL bouncing = self.scrollAnimationTimer && fabsf(_targetOffset.x - _actualOffset.x) < 30;
+    BOOL bouncing = self.scrollAnimationTimer && fabs((double)_targetOffset.x - _actualOffset.x) < 30;
     CGFloat pen = -_actualOffset.x;
     
     // stretch scroll at start and end

@@ -41,7 +41,7 @@
 - (void)setCount:(NSInteger)count
 {
     _count = count;
-    self.text = [NSString stringWithFormat:@"%d", count];
+    self.text = [NSString stringWithFormat:@"%ld", (long)count];
 }
 
 - (void)setText:(NSString *)text
@@ -61,7 +61,7 @@
     }
     self.frame = CGRectIntegral(r);
     
-    self.hidden = !text.length > 0;
+    self.hidden = !(text.length > 0);
     
     [self.superview setNeedsLayout];
     [self setNeedsDisplay];
