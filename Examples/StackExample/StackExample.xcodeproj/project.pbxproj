@@ -13,9 +13,6 @@
 		05A4D252163C2F4000309444 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05A4D250163C2F4000309444 /* InfoPlist.strings */; };
 		05A4D254163C2F4000309444 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A4D253163C2F4000309444 /* main.m */; };
 		05A4D258163C2F4000309444 /* SPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A4D257163C2F4000309444 /* SPAppDelegate.m */; };
-		05A4D25A163C2F4000309444 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A4D259163C2F4000309444 /* Default.png */; };
-		05A4D25C163C2F4000309444 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A4D25B163C2F4000309444 /* Default@2x.png */; };
-		05A4D25E163C2F4000309444 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A4D25D163C2F4000309444 /* Default-568h@2x.png */; };
 		05A4D292163C2F8600309444 /* SPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A4D285163C2F8600309444 /* SPBadgeView.m */; };
 		05A4D293163C2F8600309444 /* SPSeparatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A4D287163C2F8600309444 /* SPSeparatorView.m */; };
 		05A4D294163C2F8600309444 /* SPSideTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A4D288163C2F8600309444 /* SPSideTabController.m */; };
@@ -44,6 +41,7 @@
 		05A4D2C8163C3E2900309444 /* 114-balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A4D2C6163C3E2900309444 /* 114-balloon.png */; };
 		05A4D2C9163C3E2900309444 /* 185-printer.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A4D2C7163C3E2900309444 /* 185-printer.png */; };
 		05BD7D1E18CF8DBE00A990C9 /* SPFunctional-mini.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BD7D1D18CF8DBE00A990C9 /* SPFunctional-mini.m */; };
+		FC1B39842060AD9F009015D1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1B39832060AD9F009015D1 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,9 +55,6 @@
 		05A4D255163C2F4000309444 /* StackExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StackExample-Prefix.pch"; sourceTree = "<group>"; };
 		05A4D256163C2F4000309444 /* SPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
 		05A4D257163C2F4000309444 /* SPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAppDelegate.m; sourceTree = "<group>"; };
-		05A4D259163C2F4000309444 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		05A4D25B163C2F4000309444 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		05A4D25D163C2F4000309444 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		05A4D281163C2F8600309444 /* SPSideTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSideTabController.h; sourceTree = "<group>"; };
 		05A4D282163C2F8600309444 /* SPStackedNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPStackedNavigationController.h; sourceTree = "<group>"; };
 		05A4D284163C2F8600309444 /* SPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBadgeView.h; sourceTree = "<group>"; };
@@ -101,6 +96,7 @@
 		05A4D2C7163C3E2900309444 /* 185-printer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "185-printer.png"; path = "icons-from-glyphish/185-printer.png"; sourceTree = SOURCE_ROOT; };
 		05BD7D1C18CF8DBE00A990C9 /* SPFunctional-mini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPFunctional-mini.h"; sourceTree = "<group>"; };
 		05BD7D1D18CF8DBE00A990C9 /* SPFunctional-mini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPFunctional-mini.m"; sourceTree = "<group>"; };
+		FC1B39832060AD9F009015D1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,9 +168,7 @@
 				05A4D250163C2F4000309444 /* InfoPlist.strings */,
 				05A4D253163C2F4000309444 /* main.m */,
 				05A4D255163C2F4000309444 /* StackExample-Prefix.pch */,
-				05A4D259163C2F4000309444 /* Default.png */,
-				05A4D25B163C2F4000309444 /* Default@2x.png */,
-				05A4D25D163C2F4000309444 /* Default-568h@2x.png */,
+				FC1B39832060AD9F009015D1 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -306,9 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				05A4D252163C2F4000309444 /* InfoPlist.strings in Resources */,
-				05A4D25A163C2F4000309444 /* Default.png in Resources */,
-				05A4D25C163C2F4000309444 /* Default@2x.png in Resources */,
-				05A4D25E163C2F4000309444 /* Default-568h@2x.png in Resources */,
 				05A4D2A5163C31C900309444 /* RootTestViewController.xib in Resources */,
 				05A4D2AA163C330300309444 /* ChildTestViewController.xib in Resources */,
 				05A4D2AE163C365C00309444 /* bg-tb@2x~ipad.png in Resources */,
@@ -323,6 +314,7 @@
 				05A4D2C4163C37BB00309444 /* SPSideTabBar-button-overlay+selected.png in Resources */,
 				05A4D2C5163C37BB00309444 /* SPSideTabBar-button-overlay+selected+pressed.png in Resources */,
 				05A4D2C8163C3E2900309444 /* 114-balloon.png in Resources */,
+				FC1B39842060AD9F009015D1 /* Launch Screen.storyboard in Resources */,
 				05A4D2C9163C3E2900309444 /* 185-printer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
