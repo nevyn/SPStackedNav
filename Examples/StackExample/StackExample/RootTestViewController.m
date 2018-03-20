@@ -31,7 +31,7 @@
 
 - (SPStackedNavigationPageSize)stackedNavigationPageSize
 {
-    return kStackedPageFullSize;
+    return SPStackedNavigationPageSizeFull;
 }
 
 - (IBAction)test:(id)sender

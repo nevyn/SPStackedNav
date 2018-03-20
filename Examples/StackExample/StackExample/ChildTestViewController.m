@@ -37,7 +37,7 @@
 
 - (SPStackedNavigationPageSize)stackedNavigationPageSize;
 {
-    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? kStackedPageHalfSize : kStackedPageFullSize;
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? SPStackedNavigationPageSizeHalf : SPStackedNavigationPageSizeFull;
 }
 
 @end
