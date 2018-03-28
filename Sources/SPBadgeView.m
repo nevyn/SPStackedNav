@@ -27,10 +27,10 @@
 {
     if (!(self = [super initWithFrame:frame]))
         return nil;
-    
-    self.count = 0;
+
     self.opaque = NO;
     self.font = SPBadgeView.badgeFont;
+    self.count = 0;
     self.textColor = [UIColor blackColor];
     self.textTransparentOnHighlightedAndSelected = NO;
     self.userInteractionEnabled = NO;
@@ -49,7 +49,7 @@
     _text = [text copy];
     // Resize to fit the badge
     CGRect r = self.frame;
-    r.size = [self.text sizeWithFont:self.font];
+    r.size = [self.text sizeWithAttributes:@{NSFontAttributeName: self.font}];
     r.size.width += 16;
     r.size.height += 2;
 
@@ -104,12 +104,15 @@
     CGColorSpaceRelease(colorSpace);
     
     CGRect textRect = self.bounds;
-    CGSize textSize = [self.text sizeWithFont:self.font];
+    CGSize textSize = [self.text sizeWithAttributes:@{NSFontAttributeName: self.font}];
     textRect.origin.y = textRect.size.height / 2 - textSize.height / 2;
+    NSMutableParagraphStyle *mutableParagraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    mutableParagraphStyle.lineBreakMode = NSLineBreakByClipping;
+    mutableParagraphStyle.alignment = NSTextAlignmentCenter;
     [self.text drawInRect:textRect
-                 withFont:self.font
-            lineBreakMode:NSLineBreakByClipping
-                alignment:NSTextAlignmentCenter];
+           withAttributes:@{NSFontAttributeName: self.font,
+                            NSParagraphStyleAttributeName: mutableParagraphStyle
+                            }];
 }
 
 @end

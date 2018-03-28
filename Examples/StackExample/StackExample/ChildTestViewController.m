@@ -32,12 +32,12 @@
 - (IBAction)test:(id)sender
 {
     [self.stackedNavigationController pushViewController:[ChildTestViewController new] onTopOf:self animated:YES];
-	self.stackedNavigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", self.stackedNavigationController.viewControllers.count];
+	self.stackedNavigationController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%lu", self.stackedNavigationController.viewControllers.count];
 }
 
 - (SPStackedNavigationPageSize)stackedNavigationPageSize;
 {
-    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? kStackedPageHalfSize : kStackedPageFullSize;
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? SPStackedNavigationPageSizeHalf : SPStackedNavigationPageSizeFull;
 }
 
 @end
